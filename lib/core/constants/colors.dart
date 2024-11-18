@@ -8,6 +8,7 @@ class AppColors {
   static const Color veryDarkGray2 = Color(0xFF1A1A1A);
   static const Color veryDarkGray3 = Color(0xFF1D1D1D);
   static const Color veryDarkGray4 = Color(0xFF1E1E1E);
+  //0xFF0B132B
 
   // Primary and accent colors
   static const Color teal = Color(0xFF4ECDC4);
