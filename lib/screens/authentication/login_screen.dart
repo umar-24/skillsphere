@@ -50,10 +50,10 @@ class _LoginScreenState extends State<LoginScreen> {
               Form(
                   child: Column(
                 children: [
-                  const MyTextFeild(
+                   MyTextFeild(
                     hintText: "Email",
                     obscureText: false,
-                    leading: Icon(Icons.email_outlined),
+                    leading: Icon(Iconsax.direct_right)
                   ),
                   const SizedBox(
                     height: 10,
@@ -68,7 +68,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       Spacer(),
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/forgot');
+                          },
                           child: const Text(
                             "Forgot Password?",
                             style: TextStyle(color: AppColors.darkBlue),

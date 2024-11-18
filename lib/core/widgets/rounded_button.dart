@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skillsphere/core/constants/colors.dart';
 
 class RoundedButton extends StatelessWidget {
   final String title;
@@ -10,7 +11,7 @@ class RoundedButton extends StatelessWidget {
       required this.title,
       this.onTap,
       this.loading = false,
-      this.color});
+      this.color = AppColors.darkBlue});
 
   @override
   Widget build(BuildContext context) {

@@ -23,7 +23,11 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData(
           fontFamily: "Poppins",
-          scaffoldBackgroundColor: AppColors.offWhite),
+          scaffoldBackgroundColor: AppColors.offWhite,
+          appBarTheme: AppBarTheme(
+            backgroundColor: AppColors.offWhite
+          )
+          ),
         initialRoute: AppRoutes.splash,
         onGenerateRoute: AppRoutes.generateRoute, 
       ),
