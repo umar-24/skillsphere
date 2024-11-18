@@ -69,7 +69,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             "Explore a world of knowledge with interactive courses, engaging lessons, and personalized progress tracking.",
         pageController: _pageController,
         onNext: () {
-          
+          Navigator.pushReplacementNamed(context, '/login');
         },
         onSkip: () {
           _pageController.jumpToPage(2); // Skip to the last page

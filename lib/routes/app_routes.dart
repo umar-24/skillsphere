@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skillsphere/screens/authentication/login_screen.dart';
 import 'package:skillsphere/screens/home_screen.dart';
 import 'package:skillsphere/screens/onboarding/onboarding_screen.dart';
 import 'package:skillsphere/screens/splashScreen/splash_screen.dart';
@@ -8,8 +9,7 @@ import 'package:skillsphere/provider/onBoarding_provider.dart';
 class AppRoutes {
   static const String splash = '/';
   static const String home = '/home';
-  static const String login = '/login';
-  static const String register = '/register';
+  static const String login = '/login';  // Add the route for LoginScreen
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -30,6 +30,9 @@ class AppRoutes {
             );
           },
         );
+
+      case login:  // Handle the LoginScreen route
+        return MaterialPageRoute(builder: (_) => const LoginScreen()); 
 
       default:
         return MaterialPageRoute(
