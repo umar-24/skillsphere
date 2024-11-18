@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:lottie/lottie.dart';
@@ -6,39 +8,40 @@ import 'package:skillsphere/core/constants/images.dart';
 import 'package:skillsphere/core/widgets/my_textfeild.dart';
 import 'package:skillsphere/core/widgets/rounded_button.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20,),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 30),
                 child: Container(
-                    height: 300,
-                    width: double.infinity,
-                    child: Lottie.asset(loginAnimation)),
+                  height: 300,
+                  width: double.infinity,
+                  child: Lottie.asset(registerAnimation)),
               ),
               const Text(
-                "Welcome Back to \nSkillSphere!",
+                "Join SkillSphere Today!",
                 style: TextStyle(
                     color: AppColors.darkBlue,
                     fontSize: 22,
                     fontWeight: FontWeight.bold),
               ),
               Text(
-                "Sign in to continue your learning, track progress, and explore new courses. Let’s get started!",
+                "Create your account to access exclusive courses, track progress, and transform your learning journey.",
                 style: TextStyle(
                   color: Colors.grey.shade600,
                   fontSize: 14,
@@ -50,37 +53,46 @@ class _LoginScreenState extends State<LoginScreen> {
               Form(
                   child: Column(
                 children: [
+                  Row(
+                    children: [
+                      Expanded(child: MyTextFeild(hintText: "First Name", obscureText: false)),
+                      const SizedBox(width: 10,),
+                      Expanded(child: MyTextFeild(hintText: "Last Name", obscureText: false)),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
                    MyTextFeild(
                     hintText: "Email",
                     obscureText: false,
                     leading: Icon(Iconsax.direct_right)
                   ),
-                  const SizedBox(
+                   SizedBox(
                     height: 10,
                   ),
-                  const MyTextFeild(
+                   MyTextFeild(
                     hintText: "Password",
                     obscureText: true,
                     leading: Icon(Iconsax.lock_1),
                     trailing: Icon(Iconsax.eye),
                   ),
-                  Row(
-                    children: [
-                      Spacer(),
-                      TextButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/forgot');
-                          },
-                          child: const Text(
-                            "Forgot Password?",
-                            style: TextStyle(color: AppColors.darkBlue),
-                          )),
-                    ],
-                  )
+                  SizedBox(
+                    height: 10,
+                  ),
+                   MyTextFeild(
+                    hintText: "Confirm Password",
+                    obscureText: true,
+                    leading: Icon(Iconsax.lock_1),
+                    trailing: Icon(Iconsax.eye),
+                  ),
                 ],
               )),
+              const SizedBox(
+                height: 20,
+              ),
               const RoundedButton(
-                title: "Login",
+                title: "Register",
                 color: AppColors.darkBlue,
               ),
               const SizedBox(
@@ -90,15 +102,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Don't have an account! ",
+                    "Already have an account! ",
                     style: TextStyle(color: AppColors.darkBlue),
                   ),
                   GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, "/register");
+                        Navigator.pushNamed(context, '/login');
                       },
                       child: Text(
-                        "Register Now",
+                        "Login Now",
                         style: TextStyle(
                             color: AppColors.darkBlue,
                             fontWeight: FontWeight.bold),

@@ -18,3 +18,4 @@ const animation3 = "assets/animations/animation3.json";
 const animation4 = "assets/animations/animation4.json";
 const loginAnimation = "assets/animations/loginAnimation.json";
 const forgotpasswordAnimation = "assets/animations/forgotpassword.json";
+const registerAnimation = "assets/animations/signupAnimation.json";

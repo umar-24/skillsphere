@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:skillsphere/screens/authentication/forgotpassword.dart';
 import 'package:skillsphere/screens/authentication/login_screen.dart';
+import 'package:skillsphere/screens/authentication/register_screen.dart';
 import 'package:skillsphere/screens/home_screen.dart';
 import 'package:skillsphere/screens/onboarding/onboarding_screen.dart';
 import 'package:skillsphere/screens/splashScreen/splash_screen.dart';
@@ -37,7 +38,9 @@ class AppRoutes {
       case login:  
         return MaterialPageRoute(builder: (_) => const LoginScreen()); 
         case forgot: 
-        return MaterialPageRoute(builder: (_) => const Forgotpassword()); 
+        return MaterialPageRoute(builder: (_) => const Forgotpassword());
+        case register: 
+        return MaterialPageRoute(builder: (_) => const RegisterScreen()); 
 
       default:
         return MaterialPageRoute(
