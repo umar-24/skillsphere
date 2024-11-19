@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:skillsphere/core/constants/colors.dart';
-import 'package:skillsphere/core/constants/images.dart';
 class MyCard extends StatelessWidget {
   final String imagePath, title, description;
   
