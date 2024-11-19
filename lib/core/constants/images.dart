@@ -10,6 +10,9 @@ const passwordIcon = "assets/icons/password.svg";
 const sliderImage1 = "assets/images/1.png";
 const sliderImage2 = "assets/images/2.png";
 const sliderImage3 = "assets/images/3.png";
+const thumbnail1 = "assets/images/thumbnail1.png";
+const thumbnail2 = "assets/images/thumbnail2.png";
+const thumbnail3 = "assets/images/thumbnail3.png";
 
 
 

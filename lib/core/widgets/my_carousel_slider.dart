@@ -14,9 +14,9 @@ class MyCarouselSlider extends StatefulWidget {
 
 class _MyCarouselSliderState extends State<MyCarouselSlider> {
   final List<String> imageList = [
-    sliderImage1,
-    sliderImage2,
-    sliderImage3,
+   thumbnail1,
+   thumbnail2,
+   thumbnail3,
   ];
   int _currentIndex = 0;
 
@@ -29,18 +29,18 @@ class _MyCarouselSliderState extends State<MyCarouselSlider> {
       children: [
         CarouselSlider(
           items: imageList.map((item) => Container(
-            margin: const EdgeInsets.symmetric(horizontal: 8.0), // Space between images
+            // margin: const EdgeInsets.symmetric(horizontal: 8.0), // Space between images
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
               image: DecorationImage(
                 image: AssetImage(item),
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
               ),
             ),
           )).toList(),
           options: CarouselOptions(
             autoPlay: true,
-            height: screenHeight * 0.25, // Adjust height relative to screen size
+            height: screenHeight * 0.20, // Adjust height relative to screen size
             enlargeCenterPage: true,
             enableInfiniteScroll: true,
             viewportFraction: 0.9, // Controls width of displayed image (adjust for spacing)
