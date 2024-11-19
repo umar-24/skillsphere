@@ -6,7 +6,10 @@ const emailIcon = "assets/icons/email.svg";
 const emailIcon1 = "assets/icons/email1.png";
 const passwordIcon = "assets/icons/password.svg";
 
-
+// Images
+const sliderImage1 = "assets/images/1.png";
+const sliderImage2 = "assets/images/2.png";
+const sliderImage3 = "assets/images/3.png";
 
 
 

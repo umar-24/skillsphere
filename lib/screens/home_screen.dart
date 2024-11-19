@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skillsphere/core/widgets/my_carousel_slider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,6 +14,11 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Home Screen"),
+      ),
+      body: Column(
+        children: [
+          MyCarouselSlider()
+        ],
       ),
     );
   }

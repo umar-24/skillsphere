@@ -7,7 +7,6 @@ import 'package:skillsphere/core/constants/colors.dart';
 import 'package:skillsphere/core/constants/images.dart';
 import 'package:skillsphere/core/widgets/my_textfeild.dart';
 import 'package:skillsphere/core/widgets/rounded_button.dart';
-import 'package:skillsphere/screens/home_screen.dart';
 import 'package:skillsphere/screens/navBar.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -65,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Form(
                     child: Column(
                       children: [
-                        MyTextFeild(
+                        const MyTextFeild(
                           hintText: "Email",
                           obscureText: false,
                           leading: Icon(Iconsax.direct_right),
@@ -79,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         Row(
                           children: [
-                            Spacer(),
+                            const Spacer(),
                             TextButton(
                               onPressed: () {
                                 Navigator.pushNamed(context, '/forgot');
@@ -100,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Navbar()));
+                              builder: (context) => const Navbar()));
                     },
                     title: "Login",
                     color: AppColors.darkBlue,
@@ -109,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "Don't have an account! ",
                         style: TextStyle(color: AppColors.darkBlue),
                       ),
@@ -117,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         onTap: () {
                           Navigator.pushNamed(context, "/register");
                         },
-                        child: Text(
+                        child: const Text(
                           "Register Now",
                           style: TextStyle(
                               color: AppColors.darkBlue,
