@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:lottie/lottie.dart';
@@ -6,6 +8,7 @@ import 'package:skillsphere/core/constants/images.dart';
 import 'package:skillsphere/core/widgets/my_textfeild.dart';
 import 'package:skillsphere/core/widgets/rounded_button.dart';
 import 'package:skillsphere/screens/home_screen.dart';
+import 'package:skillsphere/screens/navBar.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -97,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => HomeScreen()));
+                              builder: (context) => Navbar()));
                     },
                     title: "Login",
                     color: AppColors.darkBlue,
