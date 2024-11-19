@@ -41,7 +41,6 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const Forgotpassword());
         case register: 
         return MaterialPageRoute(builder: (_) => const RegisterScreen()); 
-
       default:
         return MaterialPageRoute(
           builder: (_) => const SplashScreen(),

@@ -7,7 +7,7 @@ class OnboardingCard extends StatelessWidget {
   final PageController pageController;
   final VoidCallback onNext;
   final VoidCallback onSkip;
-  final bool isLastPage;  // Check if it's the last page
+  final bool isLastPage;
 
   const OnboardingCard({
     super.key,
@@ -17,66 +17,79 @@ class OnboardingCard extends StatelessWidget {
     required this.pageController,
     required this.onNext,
     required this.onSkip,
-    required this.isLastPage,  // Pass isLastPage
+    required this.isLastPage,
   });
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Container(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.width * 0.80,
+      width: screenWidth,
+      height: screenHeight * 0.85, // Adjust height relative to screen size
       child: Stack(
         children: [
-          // Main content of the onboarding card
           Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.all(50),
-                child: Lottie.asset(animation, fit: BoxFit.contain),
+                padding: EdgeInsets.all(screenWidth * 0.1), // Responsive padding
+                child: Container(
+                  height: screenHeight * 0.35, // Responsive Lottie height
+                  child: Lottie.asset(animation, fit: BoxFit.contain),
+                ),
               ),
               Column(
                 children: [
-                  Text(
-                    title,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                        color: AppColors.darkBlue,
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+                    child: Text(
+                      title,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: AppColors.darkBlue,
+                          fontSize: screenWidth * 0.08, // Responsive font size
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(10),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: screenWidth * 0.07,
+                      vertical: screenHeight * 0.015,
+                    ),
                     child: Text(
                       description,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.grey,
-                        fontSize: 16,
+                        fontSize: screenWidth * 0.04, // Responsive font size
                       ),
                     ),
                   ),
-                  // Add a button below the description
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: screenWidth * 0.1,
+                      vertical: screenHeight * 0.02,
+                    ),
                     child: Container(
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: onNext,
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 15),
+                          padding: EdgeInsets.symmetric(vertical: screenHeight * 0.02),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          backgroundColor: AppColors.darkBlue, // Button color
+                          backgroundColor: AppColors.darkBlue,
                         ),
                         child: Text(
-                          isLastPage ? "Get Started" : "Next", // Change text on last page
-                          style: const TextStyle(
+                          isLastPage ? "Get Started" : "Next",
+                          style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: screenWidth * 0.045, // Responsive font size
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -88,18 +101,17 @@ class OnboardingCard extends StatelessWidget {
             ],
           ),
 
-          // Skip button positioned at top-right corner
-          if (!isLastPage) // Show Skip button only if it's not the last page
+          if (!isLastPage)
             Positioned(
               right: 16,
               top: 15,
               child: TextButton(
                 onPressed: onSkip,
-                child: const Text(
+                child: Text(
                   "Skip",
                   style: TextStyle(
                     color: AppColors.darkBlue,
-                    fontSize: 16,
+                    fontSize: screenWidth * 0.04, // Responsive font size
                     fontWeight: FontWeight.bold,
                   ),
                 ),

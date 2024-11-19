@@ -14,22 +14,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MultiProvider(
+    return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => SplashProvider()),
-        ChangeNotifierProvider(create: (_) => OnboardingProvider()..checkIfFirstLaunch()),
-
+        ChangeNotifierProvider(
+            create: (_) => OnboardingProvider()..checkIfFirstLaunch()),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          fontFamily: "Poppins",
-          scaffoldBackgroundColor: AppColors.offWhite,
-          appBarTheme: AppBarTheme(
-            backgroundColor: AppColors.offWhite
-          )
-          ),
+            fontFamily: "Poppins",
+            scaffoldBackgroundColor: AppColors.offWhite,
+            appBarTheme: AppBarTheme(backgroundColor: AppColors.offWhite)),
         initialRoute: AppRoutes.splash,
-        onGenerateRoute: AppRoutes.generateRoute, 
+        onGenerateRoute: AppRoutes.generateRoute,
       ),
     );
   }
