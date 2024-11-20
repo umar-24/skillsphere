@@ -40,7 +40,7 @@ class _MyCarouselSliderState extends State<MyCarouselSlider> {
           )).toList(),
           options: CarouselOptions(
             autoPlay: true,
-            height: screenHeight * 0.20, // Adjust height relative to screen size
+            height: screenHeight * 0.23, // Adjust height relative to screen size
             enlargeCenterPage: true,
             enableInfiniteScroll: true,
             viewportFraction: 0.9, // Controls width of displayed image (adjust for spacing)

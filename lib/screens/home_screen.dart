@@ -19,7 +19,9 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: false,
         title: const Row(
           children: [
-            CircleAvatar(),
+            CircleAvatar(
+              foregroundImage: AssetImage(image1), radius: 20,
+            ),
             SizedBox(width: 10,),
             Text("Umar Farooq", style: TextStyle(fontSize: 16),)
           ],
@@ -27,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: const SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 20),
+          padding: EdgeInsets.only(bottom: 100, top: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -35,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
               // Courses Showing
               Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
                   "Our Courses",
                   style: TextStyle(color: AppColors.darkBlue, fontSize: 22),
@@ -69,7 +71,44 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-              )
+              ),
+
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    MyCard(
+                      title: "Mobile App Development with FLutter",
+                      description: "A short description",
+                      imagePath: thumbnail1,
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    MyCard(
+                      title: "Website  Development with Python",
+                      description: "A short description",
+                      imagePath: thumbnail2,
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    MyCard(
+                      title: "Website  Development with .Net",
+                      description: "A short description",
+                      imagePath: thumbnail3,
+                    ),
+                  ],
+                ),
+              ),
+
+              // Padding(
+              //   padding: EdgeInsets.symmetric(horizontal: 20),
+              //   child: Text(
+              //     "Our Teachers",
+              //     style: TextStyle(color: AppColors.darkBlue, fontSize: 22),
+              //   ),
+              // ),
             ],
           ),
         ),

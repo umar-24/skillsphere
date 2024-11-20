@@ -13,6 +13,7 @@ const sliderImage3 = "assets/images/3.png";
 const thumbnail1 = "assets/images/thumbnail1.png";
 const thumbnail2 = "assets/images/thumbnail2.png";
 const thumbnail3 = "assets/images/thumbnail3.png";
+const image1 = "assets/images/profile.jpeg";
 
 
 
