@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:skillsphere/core/constants/colors.dart';
+import 'package:skillsphere/screens/courses/flutter_course.dart';
 class MyCard extends StatelessWidget {
   final String imagePath, title, description;
   
@@ -64,7 +65,9 @@ class MyCard extends StatelessWidget {
                   SizedBox(
                     width: screenWidth*0.4,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> FlutterCourse()));
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.darkBlue, // Dark blue color
                         shape: RoundedRectangleBorder(

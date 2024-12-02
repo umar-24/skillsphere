@@ -49,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   children: [
                     MyCard(
+                      
                       title: "Mobile App Development with FLutter",
                       description: "A short description",
                       imagePath: thumbnail1,
