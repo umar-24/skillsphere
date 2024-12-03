@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:skillsphere/core/constants/images.dart';
+import 'package:skillsphere/core/widgets/%20progress_tracker.dart';
 import 'package:skillsphere/core/widgets/custom_dropdown.dart';
 import 'package:skillsphere/core/widgets/instructor_info.dart';
 import 'package:skillsphere/core/widgets/youtube_video_player.dart';
@@ -59,6 +60,8 @@ class _FlutterCourseState extends State<FlutterCourse> {
               title: "Course Outline",
               items: courseOutline,
             ),
+             const SizedBox(height: 20),
+             ProgressTracker(progress: 0.75)
             ],
           ),
         ),
